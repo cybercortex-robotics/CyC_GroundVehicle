@@ -17,3 +17,7 @@
 </div>
 
 ## 1. Introduction
+CyberCortex.AI.CyC_GroundVehicle is an advanced framework designed for autonomous robotic platforms. Built on the CyberCortex.AI ecosystem, it uses real-time sensor fusion for state estimation. The system supports multiple control modes, including teleoperation, waypoint navigation, and dynamic obstacle avoidance, integrating seamlessly with LiDAR, cameras, GPS, and IMU sensors for precise environmental awareness and localization. Its modular microservices architecture ensures scalability and allows easy integration with CyberCortex.AI’s AI-driven perception, mapping, and predictive control modules.
+
+## 2. Contact
+Contact us for further details [contact@cybercortex.ai](contact@cybercortex.ai).
