@@ -14,7 +14,10 @@ target_link_directories(${FILTER_NAME}
 target_link_libraries(${FILTER_NAME}
 	PUBLIC
         CycCore
-        CycToolkit)
+        CycToolkit
+        libconfig++
+        libcsv
+        ${CyC_OPENCV_WORLD})
 
 # Build the filter into the filters folder
 set_target_properties(${FILTER_NAME} PROPERTIES

@@ -2,7 +2,7 @@
 // Author: Sorin Mihai Grigorescu
 
 #include "CVehicleActuator.h"
-#include "../../../Filters_Terminals/Filter_Terminal_Vehicle/src/CTerminalVehicle.h"
+#include "../../Filter_Terminal_Vehicle/src/CTerminalVehicle.h"
 
 #ifdef Build_Robot_AgileScout
 #include <CAgileScout.h>

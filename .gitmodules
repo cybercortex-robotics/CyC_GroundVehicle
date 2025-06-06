@@ -2,7 +2,6 @@
 	path = CyC_inference
 	url = https://github.com/cybercortex-robotics/CyC_inference.git
 	branch = main
-	update = remote
 [submodule "CyC_Sensors"]
 	path = CyC_Sensors
 	url = https://github.com/cybercortex-robotics/CyC_Sensors.git
@@ -10,4 +9,24 @@
 [submodule "CyC_Robots"]
 	path = CyC_Robots
 	url = https://github.com/cybercortex-robotics/CyC_Robots.git
+	branch = main
+[submodule "CyC_Planning"]
+	path = CyC_Planning
+	url = https://github.com/cybercortex-robotics/CyC_Planning.git
+	branch = main
+[submodule "CyC_Perception"]
+	path = CyC_Perception
+	url = https://github.com/cybercortex-robotics/CyC_Perception.git
+	branch = main
+[submodule "CyC_Visualization"]
+	path = CyC_Visualization
+	url = https://github.com/cybercortex-robotics/CyC_Visualization.git
+	branch = main
+[submodule "CyC_Slam"]
+	path = CyC_Slam
+	url = https://github.com/cybercortex-robotics/CyC_Slam.git
+	branch = main
+[submodule "CyC_Comm"]
+	path = CyC_Comm
+	url = https://github.com/cybercortex-robotics/CyC_Comm.git
 	branch = main

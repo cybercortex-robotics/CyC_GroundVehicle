@@ -3,7 +3,7 @@
 
 set(FILTER_NAME Filter_Terminal_Vehicle)
 
-find_package(Qt5 COMPONENTS Core REQUIRED)
+find_package(Qt5 COMPONENTS Core Gui Widgets PrintSupport REQUIRED)
 
 add_library(${FILTER_NAME} SHARED
     src/CTerminalVehicle.h
@@ -20,10 +20,16 @@ target_link_directories(${FILTER_NAME}
 
 target_link_libraries(${FILTER_NAME}
     PUBLIC
+        Qt5::Core
+        Qt5::Gui
+        Qt5::Widgets
+        Qt5::PrintSupport
+        qtplot
         CycCore
         CycToolkit
-        Qt5::Core
-        qtplot)
+        libconfig++
+        libcsv
+        ${CyC_OPENCV_WORLD})
 
 # Build the filter into the filters folder
 set_target_properties(${FILTER_NAME} PROPERTIES

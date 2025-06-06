@@ -120,8 +120,9 @@ void CVehicleStateEstimation::update()
 
     // Convert imu quaternion output to euler RPY
     Eigen::Vector3f imu_euler_rpy = Eigen::Vector3f::Zero();
-    if (m_bUseIMU)
-        imu_euler_rpy = CQuaternion(m_IMU.quat).to_euler_ZYX();
+    // TODO: calculate quaternions from imu data
+    //if (m_bUseIMU)
+    //    imu_euler_rpy = CQuaternion(m_IMU.quat).to_euler_ZYX();
 
     if (m_bUseGPS && m_bUseWheelEncoders && m_bUseIMU)
     {

@@ -287,8 +287,9 @@ bool CVehicleStateEstimationFilter::process()
                 {
                     if (m_pInputFilterIMU->getData(imu))
                     {
-                        Eigen::Vector3f euler_rpy(CQuaternion(imu.quat).to_euler_ZYX());
-                        m_InitialState.x_hat[3] = euler_rpy.z();
+                        // TODO: calculate quaternion from imu data
+                        // Eigen::Vector3f euler_rpy(CQuaternion(imu.quat).to_euler_ZYX());
+                        //m_InitialState.x_hat[3] = euler_rpy.z();
                         break;
                     }
 
@@ -363,7 +364,8 @@ bool CVehicleStateEstimationFilter::process()
                 CycImu imu;
                 if (m_pInputFilterIMU->getData(imu))
                 {
-                    CQuaternion imu_quat(imu.quat);
+                    // TODO: calculate quaternion from imu data
+                    /*CQuaternion imu_quat(imu.quat);
 
                     Eigen::Vector3f imu_euler_rpy = imu_quat.to_euler_ZYX();
                     
@@ -379,7 +381,7 @@ bool CVehicleStateEstimationFilter::process()
                     
                     m_lastTsIMU = ts;
                     m_pVehicleStateEstimation->updateIMU(imu, ts);
-                    bUpdateStateEstimate = true;
+                    bUpdateStateEstimate = true;*/
                 }
             }
         }
