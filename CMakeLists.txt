@@ -63,6 +63,7 @@ link_directories(${CyC_THIRD_PARTY_LIBRARY_DIRECTORIES})
 add_subdirectory(CyC_Robots/src)
 
 # Hardware sensory filters
+add_cyc_filter(Filter_Comm_DataChannel CyC_Comm/src/Filter_Comm_DataChannel)
 add_cyc_filter(Filter_HW_MonoCamera CyC_Sensors/src/Filter_HW_MonoCamera)
 add_cyc_filter(Filter_HW_RgbdCamera CyC_Sensors/src/Filter_HW_RgbdCamera)
 add_cyc_filter(Filter_HW_Imu CyC_Sensors/src/Filter_HW_Imu)
