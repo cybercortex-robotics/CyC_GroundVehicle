@@ -22,3 +22,11 @@
 	path = CyC_Comm
 	url = https://github.com/cybercortex-robotics/CyC_Comm.git
 	branch = main
+[submodule "CyC_Robots"]
+	path = CyC_Robots
+	url = https://github.com/cybercortex-robotics/CyC_Robots.git
+	branch = main
+[submodule "CyC_Sensors"]
+	path = CyC_Sensors
+	url = https://github.com/cybercortex-robotics/CyC_Sensors.git
+	branch = main
