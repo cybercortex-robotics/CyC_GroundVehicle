@@ -3,20 +3,22 @@
 
 set(FILTER_NAME Filter_HW_VehicleActuator)
 
+find_package(Qt5 REQUIRED COMPONENTS Core)
+
 if(RASPBERRY_PI)
-	add_library(${FILTER_NAME} SHARED
-		src/CVehicleActuator.h
-		src/CVehicleActuator.cpp
-		src/api/raspi/CRotaryEncoder.cpp
-		src/api/raspi/CRotaryEncoder.h
-		src/api/raspi/CVehicleActuatorRaspiApi.cpp
-		src/api/raspi/CVehicleActuatorRaspiApi.h)
+    add_library(${FILTER_NAME} SHARED
+        src/CVehicleActuator.h
+        src/CVehicleActuator.cpp
+        src/api/raspi/CRotaryEncoder.cpp
+        src/api/raspi/CRotaryEncoder.h
+        src/api/raspi/CVehicleActuatorRaspiApi.cpp
+        src/api/raspi/CVehicleActuatorRaspiApi.h)
 else(RASPBERRY_PI)
-	add_library(${FILTER_NAME} SHARED
-		src/CVehicleActuator.h
-		src/CVehicleActuator.cpp
-		src/api/unity/CVehicleActuatorUnityApi.cpp
-		src/api/unity/CVehicleActuatorUnityApi.h)
+    add_library(${FILTER_NAME} SHARED
+        src/CVehicleActuator.h
+        src/CVehicleActuator.cpp
+        src/api/unity/CVehicleActuatorUnityApi.cpp
+        src/api/unity/CVehicleActuatorUnityApi.h)
 endif(RASPBERRY_PI)
 
 target_link_directories(${FILTER_NAME}
@@ -24,12 +26,13 @@ target_link_directories(${FILTER_NAME}
         ${CyC_THIRD_PARTY_LIBRARY_DIRECTORIES})
 
 target_link_libraries(${FILTER_NAME}
-	PRIVATE
-		CycCore
-		CycToolkit
-		enet
+    PRIVATE
+        CycCore
+        CycToolkit
+        enet
         libconfig++
         libcsv
+        Qt5::Core
         ${CyC_OPENCV_WORLD})
 
 if (WIN32)
@@ -37,29 +40,29 @@ if (WIN32)
 endif ()
 
 if (NOT WIN32)
-	target_link_libraries(${FILTER_NAME}
-		PUBLIC
-			Robot_AgileScout)
-	target_compile_definitions(${FILTER_NAME}
-		PRIVATE
-			-DBuild_Robot_AgileScout)
+    target_link_libraries(${FILTER_NAME}
+        PUBLIC
+            Robot_AgileScout)
+    target_compile_definitions(${FILTER_NAME}
+        PRIVATE
+            -DBuild_Robot_AgileScout)
 endif ()
 
 # Build test unit only on Raspberry Pi Robot
 if(RASPBERRY_PI)
-	# Test unit
-	add_executable(tu_RaspberryPiRobotManualControl
-		src/tu_RaspberryPiRobotManualControl.cpp)
+    # Test unit
+    add_executable(tu_RaspberryPiRobotManualControl
+        src/tu_RaspberryPiRobotManualControl.cpp)
 
-	target_link_directories(tu_RaspberryPiRobotManualControl
-		PUBLIC 
-			${CyC_THIRD_PARTY_LIBRARY_DIRECTORIES})
+    target_link_directories(tu_RaspberryPiRobotManualControl
+        PUBLIC 
+            ${CyC_THIRD_PARTY_LIBRARY_DIRECTORIES})
 
-	target_link_libraries(tu_RaspberryPiRobotManualControl
-		PUBLIC
-			${CyC_OPENCV_WORLD}
-			pthread
-			pigpio)
+    target_link_libraries(tu_RaspberryPiRobotManualControl
+        PUBLIC
+            ${CyC_OPENCV_WORLD}
+            pthread
+            pigpio)
 endif(RASPBERRY_PI)
 
 # Build the filter into the filters folder
