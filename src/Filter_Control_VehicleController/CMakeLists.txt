@@ -47,11 +47,16 @@ target_link_librarieS(${FILTER_NAME}
         #${PYTHON_LIBRARIES}
         CycCore
         CycToolkit
-        libconfig++
         libcsv
         octomap
         octomath
         ${CyC_OPENCV_WORLD})
+
+if (WIN32)
+    target_link_libraries(${FILTER_NAME} PUBLIC libconfig++)
+else ()
+    target_link_libraries(${FILTER_NAME} PUBLIC config++)
+endif()
 
 # Build the filter into the filters folder
 set_target_properties(${FILTER_NAME} PROPERTIES

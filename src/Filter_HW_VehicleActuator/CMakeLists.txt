@@ -30,14 +30,15 @@ target_link_libraries(${FILTER_NAME}
         CycCore
         CycToolkit
         enet
-        libconfig++
         libcsv
         Qt5::Core
         ${CyC_OPENCV_WORLD})
 
 if (WIN32)
-    target_link_libraries(${FILTER_NAME} PUBLIC winmm ws2_32)
-endif ()
+    target_link_libraries(${FILTER_NAME} PUBLIC libconfig++ winmm ws2_32)
+else ()
+    target_link_libraries(${FILTER_NAME} PUBLIC config++)
+endif()
 
 if (NOT WIN32)
     target_link_libraries(${FILTER_NAME}
