@@ -30,7 +30,6 @@ target_link_libraries(${FILTER_NAME}
         CycCore
         CycToolkit
         enet
-        libcsv
         Qt5::Core
         ${CyC_OPENCV_WORLD})
 

@@ -28,7 +28,6 @@ target_link_libraries(${FILTER_NAME}
         CycCore
 		CycToolkit
 		enet
-        libcsv
         ${CyC_OPENCV_WORLD})
 
 if (WIN32)

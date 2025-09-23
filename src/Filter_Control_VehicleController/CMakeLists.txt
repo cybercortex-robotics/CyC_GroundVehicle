@@ -47,7 +47,6 @@ target_link_librarieS(${FILTER_NAME}
         #${PYTHON_LIBRARIES}
         CycCore
         CycToolkit
-        libcsv
         octomap
         octomath
         ${CyC_OPENCV_WORLD})
@@ -95,8 +94,8 @@ if (NOT GENIUS_BOARD)
         PRIVATE
             #${FILTER_NAME}
             CycToolkit
-            libcsv
-            ${CyC_OPENCV_WORLD})
+            ${CyC_OPENCV_WORLD}
+            fmt)
             
     add_executable(tu_CartPoleController
 		src/tu_CartPoleController.cpp)
@@ -114,5 +113,6 @@ if (NOT GENIUS_BOARD)
     target_link_libraries(tu_CartPoleController
         PUBLIC
             CycToolkit
-            ${CyC_OPENCV_WORLD})
+            ${CyC_OPENCV_WORLD}
+            fmt)
 endif (NOT GENIUS_BOARD)

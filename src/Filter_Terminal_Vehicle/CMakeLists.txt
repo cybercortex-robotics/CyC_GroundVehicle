@@ -27,7 +27,6 @@ target_link_libraries(${FILTER_NAME}
         qtplot
         CycCore
         CycToolkit
-        libcsv
         ${CyC_OPENCV_WORLD})
 
 if (WIN32)

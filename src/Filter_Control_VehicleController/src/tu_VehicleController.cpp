@@ -4,7 +4,7 @@
 #include <iostream>
 #include <libconfig.h++>
 #include "CyC_TYPES.h"
-#include "csv_reader.h"
+#include "os/CCsvReader.h"
 #include "os/CFileUtils.h"
 #include "vision/CImageDisplayUtils.h"
 #include "control/CStateSpaceModelVehicle.h"

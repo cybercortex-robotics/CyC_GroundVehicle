@@ -8,7 +8,7 @@
 #include "CCycFilterBase.h"
 #include "os/qtplot/qtplot.h"
 #include "os/qtplot/qtimage.h"
-#include <csv_reader.h>
+#include <os/CCsvReader.h>
 #include <opencv2/highgui.hpp>
 #include <opencv2/imgproc.hpp>
 

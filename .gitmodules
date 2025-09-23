@@ -30,3 +30,7 @@
 	path = CyC_Sensors
 	url = https://github.com/cybercortex-robotics/CyC_Sensors.git
 	branch = main
+[submodule "CyC_Daemon"]
+	path = CyC_Daemon
+	url = https://github.com/cybercortex-robotics/CyC_Daemon.git
+	branch = main

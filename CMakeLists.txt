@@ -52,7 +52,7 @@ link_directories(${CyC_THIRD_PARTY_LIBRARY_DIRECTORIES})
 # Build Robots
 add_subdirectory(CyC_Robots/src)
 
-# Hardware sensory filters
+# Filters
 add_cyc_filter(Filter_Comm_DataChannel CyC_Comm/src/Filter_Comm_DataChannel)
 add_cyc_filter(Filter_HW_MonoCamera CyC_Sensors/src/Filter_HW_MonoCamera)
 add_cyc_filter(Filter_HW_RgbdCamera CyC_Sensors/src/Filter_HW_RgbdCamera)
@@ -71,3 +71,5 @@ add_cyc_filter(Filter_Terminal_Vehicle src/Filter_Terminal_Vehicle)
 add_cyc_filter(Filter_Visualization_Vehicle CyC_Visualization/src/Filter_Visualization_Vehicle)
 add_cyc_filter(Filter_Visualization_Sensing CyC_Visualization/src/Filter_Visualization_Sensing)
 add_cyc_filter(Filter_Visualization_Octoviz CyC_Visualization/src/Filter_Visualization_Octoviz)
+add_cyc_filter(Filter_Daemon_CycCore CyC_Daemon/src/Filter_Daemon_CycCore)
+add_cyc_filter(Filter_Terminal_CycCoreDaemon CyC_Daemon/src/Filter_Terminal_CycCoreDaemon)

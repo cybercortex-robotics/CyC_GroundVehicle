@@ -7,7 +7,7 @@
 #include "CyC_TYPES.h"
 #include "CCycFilterBase.h"
 #include <string>
-#include <csv_reader.h>
+#include <os/CCsvReader.h>
 #include <opencv2/highgui.hpp>
 #include <opencv2/imgproc.hpp>
 #include "os/CTimer.h"
