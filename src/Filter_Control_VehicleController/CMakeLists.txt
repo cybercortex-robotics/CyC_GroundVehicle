@@ -81,38 +81,22 @@ set_target_properties(${FILTER_NAME} PROPERTIES
     RUNTIME_OUTPUT_DIRECTORY_MINSIZEREL "${CMAKE_LIBRARY_OUTPUT_DIRECTORY}/${CyC_FILTERS_PATH}"
 )
 
-if (NOT GENIUS_BOARD)
-    # Test unit
-    add_executable(tu_VehicleController
-            src/tu_VehicleController.cpp)
-
-    target_link_directories(tu_VehicleController
-        PUBLIC 
-            ${CyC_THIRD_PARTY_LIBRARY_DIRECTORIES})
-
-    target_link_libraries(tu_VehicleController
-        PRIVATE
-            #${FILTER_NAME}
-            CycToolkit
-            ${CyC_OPENCV_WORLD}
-            fmt)
+# Test units
+add_executable(tu_VehicleController src/tu_VehicleController.cpp)
+target_link_directories(tu_VehicleController PUBLIC ${CyC_THIRD_PARTY_LIBRARY_DIRECTORIES})
+target_link_libraries(tu_VehicleController PRIVATE CycToolkit ${CyC_OPENCV_WORLD})
+if (NOT WIN32)
+	target_link_libraries(tu_VehicleController PUBLIC fmt)
+endif ()
             
-    add_executable(tu_CartPoleController
-		src/tu_CartPoleController.cpp)
-
-    target_include_directories(tu_CartPoleController
-        PUBLIC
-            ${CMAKE_SOURCE_DIR}/src/cyc_filters/Filters_Visualization/Filter_Visualization_Octoviz/src/octoviz/include
-            ${CMAKE_SOURCE_DIR}/src/cyc_filters/Filters_Visualization/Filter_Visualization_Octoviz/src/octoviz/src/extern/QGLViewer
-            ${CMAKE_SOURCE_DIR}/3rdParty/qt-5.12.2/win-msvc141-x64/include)
-
-    target_link_directories(tu_CartPoleController
-        PUBLIC 
-            ${CyC_THIRD_PARTY_LIBRARY_DIRECTORIES})
-
-    target_link_libraries(tu_CartPoleController
-        PUBLIC
-            CycToolkit
-            ${CyC_OPENCV_WORLD}
-            fmt)
-endif (NOT GENIUS_BOARD)
+add_executable(tu_CartPoleController src/tu_CartPoleController.cpp)
+target_include_directories(tu_CartPoleController
+    PUBLIC
+        ${CMAKE_SOURCE_DIR}/src/cyc_filters/Filters_Visualization/Filter_Visualization_Octoviz/src/octoviz/include
+        ${CMAKE_SOURCE_DIR}/src/cyc_filters/Filters_Visualization/Filter_Visualization_Octoviz/src/octoviz/src/extern/QGLViewer
+        ${CMAKE_SOURCE_DIR}/3rdParty/qt-5.12.2/win-msvc141-x64/include)
+target_link_directories(tu_CartPoleController PUBLIC ${CyC_THIRD_PARTY_LIBRARY_DIRECTORIES})
+target_link_libraries(tu_CartPoleController PUBLIC CycToolkit ${CyC_OPENCV_WORLD})
+if (NOT WIN32)
+	target_link_libraries(tu_CartPoleController PUBLIC fmt)
+endif ()
